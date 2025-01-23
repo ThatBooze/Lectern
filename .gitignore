@@ -1,8 +1,12 @@
+# I don't want your bloat!
 .git
 .venv
 .idea
+.vscode
 
+# Same with you, Python.
 *.pyc
 **/__pycache__/
 
+# I wonder how many tokens have been leaked on Github...
 src/configuration.json
