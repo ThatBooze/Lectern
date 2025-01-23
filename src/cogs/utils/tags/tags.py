@@ -7,8 +7,8 @@ class Tags(commands.Cog):
         self.bot = bot
         self.tags = discord.slashCommandGroup(name="tags")
 
-    @tags.command
-    async def share(self, ctx: ApplicationContext, ):
+    @self.tags.command
+    async def share(self, ctx: ApplicationContext):
         await ctx.send_response("Surprise! It's a [placeholder](https://www.google.com/search?q=placeholder)!")
 
 
