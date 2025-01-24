@@ -6,11 +6,11 @@ class Tags(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    tags = discord.slashCommandGroup(name="tags")
+    tags = discord.SlashCommandGroup(name="tags")
 
-    @tags.command
-    async def share(self, ctx: ApplicationContext):
-        await ctx.send_response("Surprise! It's a [placeholder](https://www.google.com/search?q=placeholder)!")
+    @tags.command()
+    async def share(self, ctx: discord.ApplicationContext):
+        await ctx.respond("meals!")
 
 
 def setup(bot):
