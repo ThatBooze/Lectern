@@ -1,7 +1,9 @@
 import os
 import json
 import discord
+from verbose import logger
 from discord.ext import commands
+
 
 with open("configuration.json") as config_file:
     config_data = json.load(config_file)
@@ -15,11 +17,11 @@ def load_cogs():  # TODO: Replace this entire block of code...?
         for file in files:
             if file.endswith(".py") and not file.endswith(".py.disabled"):
                 cog_path = os.path.join(root, file).replace(os.sep, ".")[:-3]
-                try:  # TODO: Replace with a more verbose logging system.
+                try:
                     bot.load_extension(cog_path)
-                    print(f"Loaded: \033[0;32m{cog_path}\033[0m")
+                    logger.info(f"Initialized: {cog_path}")
                 except Exception as e:
-                    print(f"Failed to load \033[0;91m{cog_path}\033[0m\nError: {e}\n")
+                    logger.exception(f"Failed to load {cog_path}: {e}")
 
 
 load_cogs()
