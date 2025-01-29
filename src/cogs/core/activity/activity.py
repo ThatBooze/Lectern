@@ -1,6 +1,7 @@
 import os
 import random
 import discord
+from verbose import logger
 from discord.ext import commands, tasks
 
 
@@ -15,7 +16,12 @@ class Activity(commands.Cog):
 
     @tasks.loop(minutes=10)
     async def update_status(self):
-        await self.bot.change_presence(activity=discord.Game(name=random.choice(SPLASHES)))
+        try:
+            SPLASH = random.choice(SPLASHES)
+            await self.bot.change_presence(activity=discord.Game(name=SPLASH))
+            logger.info(f"Updated activity: {SPLASH}")
+        except Exception as e:
+            logger.error(f"An error occured when updating the activity: {e}")
 
     @update_status.before_loop
     async def before_update_status(self):
