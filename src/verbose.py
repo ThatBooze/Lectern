@@ -13,10 +13,12 @@ class ColoredFormatting(logging.Formatter):
 
     RESET_COLOR = '\033[0m'
 
-    def format(self, record):
+    def format(self, record: logging.LogRecord) -> str:
         log_color = self.LOG_COLORS.get(record.levelname, '\033[97m')
+
         formatter = logging.Formatter(
-            f"{log_color}[%(asctime)s] [%(threadName)s/%(levelname)s]: %(message)s{self.RESET_COLOR}", "%H:%M:%S")
+            f"{log_color}[%(asctime)s] [%(threadName)s/%(levelname)s]: %(message)s{self.RESET_COLOR}", "%H:%M:%S"
+            )
 
         return formatter.format(record)
 

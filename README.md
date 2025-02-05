@@ -6,4 +6,4 @@ A Discord bot designed with modularity and simplicity in mind, all written in Py
 > [!NOTE]
 > For future reference, this codebase *could* be rewritten in java at any point of time, or a few functions can be moved over to [Server-Utils](https://github.com/Legacy-Edition-Minigames/Server-Utils).
 >
-> (Un)official development for [Legacy Minigames](https://github.com/Legacy-Edition-Minigames): Discord
+> (Un)official development for [Legacy Mini Games](https://github.com/Legacy-Edition-Minigames): Discord
