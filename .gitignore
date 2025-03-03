@@ -1,5 +1,4 @@
 # I don't want your bloat!
-.git
 .venv
 .idea
 .vscode
